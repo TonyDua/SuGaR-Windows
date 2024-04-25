@@ -7,6 +7,100 @@ This is a derivative version based on the SuGaR code repository, primarily addre
 - Address path errors (In progress...)
 - Implement custom output paths
 - Develop a Web UI
+## How To Install In Windows?
+<details>
+  <summary>windows install </summary>
+  
+  ### 0. Requirements
+
+The software requirements are the following:
+- Conda (recommended for easy setup)
+- C++ Compiler for PyTorch extensions
+- CUDA toolkit 11.8 for PyTorch extensions
+- C++ Compiler and CUDA SDK must be compatible
+
+Please refer to the original <a href="https://github.com/graphdeco-inria/gaussian-splatting">3D Gaussian Splatting repository</a> for more details about requirements.
+
+### 1. Clone the repository
+
+Start by cloning this repository:
+
+```shell
+# HTTPS
+git clone https://github.com/TonyDua/SuGaR-Windows.git --recursive
+```
+
+or
+
+```shell
+# SSH
+git clone git@github.com/TonyDua/SuGaR-Windows.git --recursive
+```
+
+### 2. Install the required Python packages
+To install the required Python packages and activate the environment, go inside the `SuGaR/` directory and run the following commands:
+<details>
+  <summary><span style="font-weight: bold;">Installing directly using environment.yml will result in a large number of errors.</span></summary>
+```shell
+conda env create -f environment.yml
+conda activate sugar
+```
+![image](https://github.com/TonyDua/SuGaR-Windows/assets/47080615/3477fd0f-26d0-414c-9402-35e7042d6b2c)
+
+</details>
+
+#### Then you can try to install the required packages manually by running the following commands:
+```shell
+conda create --name sugar -y python=3.9
+conda activate sugar
+conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c fvcore -c iopath -c conda-forge fvcore iopath
+
+```
+#### install pytorch3d
+```shell
+conda install pytorch3d==0.7.4 -c pytorch3d
+```
+what is pytorch3d ? After exploring, I found the installation method here.
+[pytorch3d]https://pytorch3d.org/
+[pytorch3d-INSTALL.MD]https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
+
+So we do it like this.:
+```shell
+git clone https://github.com/facebookresearch/pytorch3d.git
+cd pytorch3d
+python setup.py install
+```
+Maybe you have：
+RuntimeError:
+The detected CUDA version (12.1) mismatches the version that was used to compile
+PyTorch (11.8). Please make sure to use the same CUDA versions.
+
+go down
+
+conda install pytorch3d==0.7.4 -c pytorch3d
+conda install -c plotly plotly
+conda install -c conda-forge rich
+conda install -c conda-forge plyfile==0.8.1
+conda install -c conda-forge jupyterlab
+conda install -c conda-forge nodejs
+conda install -c conda-forge ipywidgets
+pip install open3d
+pip install --upgrade PyMCubes
+
+### 3. Install the Gaussian Splatting rasterizer
+
+Run the following commands inside the sugar directory to install the additional Python submodules required for Gaussian Splatting:
+
+```shell
+cd gaussian_splatting/submodules/diff-gaussian-rasterization/
+pip install -e .
+cd ../simple-knn/
+pip install -e .
+cd ../../../
+```
+</details>
+
 
 ## Q&A
 
