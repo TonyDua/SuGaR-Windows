@@ -1,3 +1,33 @@
+# SuGaR Windows Version 😀
+
+This is a derivative version based on the SuGaR code repository, primarily addressing the issues of running the original code on Windows platforms. For any learning materials or inquiries regarding the SuGaR code repository, please refer to the original code repository or directly ask the author. We express our gratitude to the original authors for their hard work!
+
+## Todo
+- Resolve deployment and environment setup issues on Windows (Resolved, pending update)
+- Address path errors (In progress...)
+- Implement custom output paths
+- Develop a Web UI
+
+## Q&A
+
+**Why not submit a PR to the original code repository to fix the path issue?**
+
+Firstly, the majority of scientific research is conducted using Linux systems, so I don't believe there is any issue with the original authors' code. The actual problem lies with the Windows system. I believe the original authors have already put in a significant amount of effort into their scientific research, and these issues are not theirs to solve. Secondly, deriving a modified library makes it easier for me and my friends to deploy, learn, and test on Windows.
+
+**Will you merge the latest updates from the original code repository?**
+
+In fact, I am also a beginner and enthusiast in Python and AI, and my abilities and time are limited. I will try to keep it updated, but I cannot promise to check it every day. Your understanding is appreciated.
+
+Once again, thank you for the hard work of the original authors!
+
+
+
+[Original README of the SuGaR code repository 👇
+
+
+
+
+
 <div align="center">
 
 # SuGaR: Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Quality Mesh Rendering
